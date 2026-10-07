@@ -1,0 +1,282 @@
+.word-header {
+    padding: 60px 20px;
+    background: #dfffdc;
+}
+
+.word-header h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #30233d;
+    font-weight: 700;
+}
+
+.word-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 40px auto;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.word-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.word-stats span {
+    font-size: 0.85rem;
+    color: #665a70;
+    font-weight: 700;
+}
+
+.word-stats strong {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+.word-game {
+    width: min(700px, 94vw);
+    margin: 30px auto;
+    padding: 40px;
+    background: #fff5fb;
+    border: 4px solid #30233d;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 8px 8px 0 #30233d;
+}
+
+.category {
+    display: inline-block;
+    background: #ffd6eb;
+    border: 2px solid #30233d;
+    border-radius: 20px;
+    padding: 7px 18px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.scrambled-word {
+    margin: 35px 0 15px;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 10px;
+    word-break: break-word;
+}
+
+.hint {
+    color: #665a70;
+    min-height: 25px;
+    font-weight: 600;
+}
+
+.answer-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto 15px;
+    width: min(550px, 100%);
+}
+
+.answer-input {
+    flex: 1;
+    min-width: 0;
+    border: 3px solid #30233d;
+    border-radius: 15px;
+    padding: 12px 18px;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.answer-input:focus {
+    box-shadow: 4px 4px 0 #ff72b6;
+}
+
+.answer-input:disabled {
+    background: #eeeeee;
+}
+
+.feedback {
+    min-height: 35px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.feedback.correct {
+    color: #27963b;
+}
+
+.feedback.wrong {
+    color: #d63b6c;
+}
+
+.word-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.skip-btn {
+    background: #fff0c7;
+    color: #30233d;
+    border: 3px solid #30233d;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-weight: 800;
+}
+
+.skip-btn:hover {
+    background: #ffd6eb;
+}
+
+.instructions {
+    width: min(650px, 94vw);
+    margin: 50px auto;
+    text-align: center;
+}
+
+.instructions h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+.instructions p {
+    color: #665a70;
+}
+
+.instruction-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.instruction-list div {
+    background: white;
+    border: 2px solid #30233d;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.home-link {
+    color: #30233d;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.word-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(48, 35, 61, 0.75);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.word-overlay.show {
+    display: flex;
+}
+
+.word-modal {
+    background: #fff5fb;
+    border: 4px solid #30233d;
+    border-radius: 30px;
+    padding: 40px;
+    width: min(430px, 95%);
+    text-align: center;
+    box-shadow: 10px 10px 0 #30233d;
+    animation: popIn 0.4s ease;
+}
+
+.result-emoji {
+    font-size: 4rem;
+}
+
+.word-modal h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+}
+
+.word-modal p {
+    color: #665a70;
+}
+
+.final-score {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 0;
+}
+
+.final-score span {
+    color: #665a70;
+    font-weight: 700;
+}
+
+.final-score strong {
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.new-best {
+    color: #ff5ca8 !important;
+    font-weight: 900;
+    display: none;
+}
+
+.new-best.show {
+    display: block;
+}
+
+@keyframes popIn {
+
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .word-stats {
+        gap: 25px;
+    }
+
+    .word-game {
+        padding: 25px 18px;
+    }
+
+    .scrambled-word {
+        letter-spacing: 5px;
+    }
+
+    .answer-area {
+        flex-direction: column;
+    }
+
+    .answer-input {
+        width: 100%;
+    }
+
+    .word-modal {
+        padding: 30px 20px;
+    }
+
+}

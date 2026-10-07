@@ -1,0 +1,451 @@
+/* =========================================
+   PLAYROOM - GLOBAL STYLES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fff5fb;
+    color: #30233d;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    background: #ffd6eb;
+    padding: 16px 0;
+    border-bottom: 3px solid #30233d;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #30233d;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.navbar-brand:hover {
+    color: #ff5ca8;
+    transform: scale(1.03);
+}
+
+.nav-link {
+    color: #30233d;
+    font-weight: 700;
+    margin-left: 20px;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #ff5ca8;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 520px;
+    padding: 100px 20px;
+    background:
+        radial-gradient(circle at 10% 20%, #ffd6eb 0 8%, transparent 9%),
+        radial-gradient(circle at 90% 30%, #dff4ff 0 7%, transparent 8%),
+        radial-gradient(circle at 80% 85%, #fff0c7 0 9%, transparent 10%),
+        #f7d9ff;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "✦";
+    position: absolute;
+    top: 70px;
+    left: 8%;
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero::after {
+    content: "★";
+    position: absolute;
+    bottom: 50px;
+    right: 10%;
+    font-size: 3rem;
+    animation: float 4s ease-in-out infinite reverse;
+}
+
+.hero-small {
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 11vw, 8rem);
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 15px 0;
+    letter-spacing: -4px;
+}
+
+.hero-text {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #665a70;
+}
+
+.play-btn,
+.game-btn {
+    background: #30233d;
+    color: white;
+    border: 3px solid #30233d;
+    border-radius: 30px;
+    padding: 11px 27px;
+    font-weight: 800;
+    transition: 0.2s;
+}
+
+.play-btn:hover,
+.game-btn:hover {
+    background: #ff72b6;
+    border-color: #30233d;
+    color: #30233d;
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 0 #30233d;
+}
+
+/* =========================================
+   GAMES SECTION
+========================================= */
+
+.games-section {
+    padding: 90px 20px;
+}
+
+.section-title {
+    font-size: clamp(2.3rem, 5vw, 3.5rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    color: #665a70;
+    margin-top: 8px;
+}
+
+/* =========================================
+   GAME CARDS
+========================================= */
+
+.game-card {
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 25px;
+    padding: 30px;
+    text-align: center;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: 0.25s ease;
+}
+
+.game-card::before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: #ffd6eb;
+}
+
+.game-card:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 9px 9px 0 #30233d;
+}
+
+.game-card:nth-child(2)::before {
+    background: #dff4ff;
+}
+
+.game-card:nth-child(3)::before {
+    background: #fff0c7;
+}
+
+.game-card:nth-child(4)::before {
+    background: #e8ddff;
+}
+
+.game-card:nth-child(5)::before {
+    background: #d8ffd9;
+}
+
+.game-card:nth-child(6)::before {
+    background: #ffd6eb;
+}
+
+.game-icon {
+    font-size: 4rem;
+    margin: 15px 0;
+    display: inline-block;
+    transition: 0.25s;
+}
+
+.game-card h3 {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.game-card p {
+    color: #665a70;
+    min-height: 48px;
+    line-height: 1.5;
+}
+
+.game-btn {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* =========================================
+   COMING SOON
+========================================= */
+
+.coming-soon {
+    background: #ffeaf5;
+    border-style: dashed;
+}
+
+.coming-soon .game-icon {
+    opacity: 0.7;
+}
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+#leaderboard {
+    padding: 80px 20px;
+    background: #fff0c7;
+}
+
+#leaderboard h2 {
+    font-weight: 900;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #30233d;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* =========================================
+   SHARED GAME PAGE ELEMENTS
+========================================= */
+
+.back-btn {
+    text-decoration: none;
+    color: #30233d;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    color: #ff5ca8;
+    transform: translateX(-3px);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 450px;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .games-section {
+        padding: 60px 15px;
+    }
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-brand {
+        font-size: 1.35rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero-small {
+        letter-spacing: 3px;
+    }
+
+    .hero-text {
+        font-size: 1.1rem;
+    }
+
+    .game-card {
+        padding: 25px 20px;
+    }
+
+}
+
+/* =========================================
+   PLAYROOM GAME PAGE SYSTEM
+========================================= */
+
+.game-page {
+    min-height: 100vh;
+}
+
+/* Shared game header */
+
+.game-header {
+    padding: 65px 20px;
+    border-bottom: 3px solid #30233d;
+    text-align: center;
+}
+
+.game-header h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.game-header p:last-child {
+    color: #665a70;
+    font-size: 1.1rem;
+}
+
+/* Shared game content */
+
+.game-main {
+    padding-top: 20px;
+}
+
+/* Shared stat cards */
+
+.game-stat {
+    min-width: 100px;
+    padding: 12px 18px;
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 18px;
+    box-shadow: 4px 4px 0 #30233d;
+}
+
+.game-stat span {
+    display: block;
+    color: #665a70;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.game-stat strong {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+/* Shared section title */
+
+.game-section-title {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+/* Shared panels */
+
+.game-panel {
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 25px;
+    box-shadow: 7px 7px 0 #30233d;
+}
+
+/* Shared button animation */
+
+.btn {
+    transition: 0.2s ease;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+/* Shared mobile behavior */
+
+@media (max-width: 600px) {
+
+    .game-header {
+        padding: 50px 15px;
+    }
+
+    .game-header h1 {
+        letter-spacing: -1px;
+    }
+
+    .game-stat {
+        min-width: 85px;
+    }
+
+}

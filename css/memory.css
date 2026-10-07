@@ -1,0 +1,426 @@
+/* ========================================
+   MEMORY MATCH
+======================================== */
+
+
+/* ========================================
+   GAME HEADER
+======================================== */
+
+.memory-header {
+    padding: 60px 20px;
+    background: #f7d9ff;
+}
+
+.memory-header h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 900;
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-btn {
+    text-decoration: none;
+    color: #30233d;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   GAME INFO
+======================================== */
+
+.game-info {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    margin: 40px auto;
+
+    text-align: center;
+
+    flex-wrap: wrap;
+}
+
+.game-info div {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.game-info span {
+    font-size: 1.5rem;
+
+    font-weight: 800;
+}
+
+
+/* ========================================
+   MEMORY BOARD
+======================================== */
+
+.memory-board {
+    width: min(600px, 95%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+/* ========================================
+   MEMORY CARDS
+======================================== */
+
+.memory-card {
+    aspect-ratio: 1;
+
+    position: relative;
+
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    perspective: 1000px;
+
+    transition: transform 0.2s;
+}
+
+
+/* CARD BACK */
+
+.memory-card::before {
+
+    content: "❓";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ffd6eb;
+
+    border: 3px solid #30233d;
+
+    border-radius: 18px;
+
+    font-size: 2.5rem;
+
+    transition: transform 0.5s;
+
+    backface-visibility: hidden;
+}
+
+
+/* CARD FRONT */
+
+.memory-card::after {
+
+    content: attr(data-symbol);
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    border: 3px solid #30233d;
+
+    border-radius: 18px;
+
+    font-size: 2.5rem;
+
+    transform: rotateY(180deg);
+
+    backface-visibility: hidden;
+
+    transition: transform 0.5s;
+}
+
+
+/* FLIPPED */
+
+.memory-card.flipped::before,
+.memory-card.matched::before {
+
+    transform: rotateY(180deg);
+}
+
+
+.memory-card.flipped::after,
+.memory-card.matched::after {
+
+    transform: rotateY(0deg);
+}
+
+
+/* MATCHED */
+
+.memory-card.matched::after {
+
+    background: #d8ffd9;
+}
+
+
+/* HOVER */
+
+.memory-card:hover {
+
+    transform: scale(1.04);
+}
+
+
+/* ========================================
+   WIN OVERLAY
+======================================== */
+
+.win-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(48, 35, 61, 0.75);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+}
+
+
+/* SHOW WIN OVERLAY */
+
+.win-overlay.show {
+
+    display: flex;
+}
+
+
+/* ========================================
+   WIN MODAL
+======================================== */
+
+.win-modal {
+
+    background: #fff5fb;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    width: min(450px, 95%);
+
+    text-align: center;
+
+    box-shadow: 10px 10px 0 #30233d;
+
+    animation: popIn 0.4s ease;
+}
+
+
+/* WIN EMOJI */
+
+.win-emoji {
+
+    font-size: 4rem;
+
+    margin-bottom: 10px;
+}
+
+
+/* WIN TITLE */
+
+.win-modal h2 {
+
+    font-size: 3rem;
+
+    font-weight: 900;
+
+    margin-bottom: 5px;
+}
+
+
+.win-modal > p {
+
+    color: #665a70;
+}
+
+
+/* ========================================
+   WIN STATS
+======================================== */
+
+.win-stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 50px;
+
+    margin: 25px 0;
+}
+
+
+.win-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.win-stats span {
+
+    color: #665a70;
+
+    font-size: 0.9rem;
+}
+
+
+.win-stats strong {
+
+    font-size: 2rem;
+
+    font-weight: 900;
+}
+
+
+/* ========================================
+   NEW BEST
+======================================== */
+
+.new-best {
+
+    font-weight: 800;
+
+    color: #ff5ca8 !important;
+
+    display: none;
+}
+
+
+.new-best.show {
+
+    display: block;
+}
+
+
+/* ========================================
+   HOME LINK
+======================================== */
+
+.home-link {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: #30233d;
+
+    text-decoration: none;
+
+    font-weight: 700;
+}
+
+
+/* ========================================
+   POP ANIMATION
+======================================== */
+
+@keyframes popIn {
+
+    from {
+
+        transform: scale(0.7);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .memory-board {
+
+        gap: 8px;
+    }
+
+
+    .memory-card::before,
+    .memory-card::after {
+
+        font-size: 1.8rem;
+
+        border-radius: 12px;
+    }
+
+
+    .game-info {
+
+        gap: 25px;
+    }
+
+
+    .win-modal {
+
+        padding: 30px 20px;
+    }
+
+
+    .win-modal h2 {
+
+        font-size: 2.5rem;
+    }
+
+
+    .win-stats {
+
+        gap: 35px;
+    }
+
+}

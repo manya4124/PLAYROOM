@@ -1,0 +1,485 @@
+/* ========================================
+   REACTION RUSH
+======================================== */
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.reaction-header {
+
+    padding: 60px 20px;
+
+    background: #fff0c7;
+
+}
+
+
+.reaction-header h1 {
+
+    font-size: clamp(2.5rem, 7vw, 5rem);
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+
+.back-btn {
+
+    text-decoration: none;
+
+    color: #30233d;
+
+    font-weight: 700;
+
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.reaction-stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    margin: 40px auto;
+
+    text-align: center;
+
+    flex-wrap: wrap;
+
+}
+
+
+.reaction-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.reaction-stats span {
+
+    font-size: 0.85rem;
+
+    color: #665a70;
+
+    font-weight: 700;
+
+}
+
+
+.reaction-stats strong {
+
+    font-size: 1.7rem;
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   REACTION BOX
+======================================== */
+
+.reaction-box {
+
+    width: min(650px, 92vw);
+
+    height: 380px;
+
+    margin: 30px auto;
+
+    background: #f7d9ff;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition: 0.2s;
+
+    cursor: default;
+
+}
+
+
+/* WAITING STATE */
+
+.reaction-box.waiting {
+
+    background: #dff4ff;
+
+}
+
+
+/* CLICK STATE */
+
+.reaction-box.click-now {
+
+    background: #d8ffd9;
+
+    cursor: pointer;
+
+    transform: scale(1.02);
+
+}
+
+
+/* TOO EARLY */
+
+.reaction-box.too-early {
+
+    background: #ffd6eb;
+
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.reaction-content {
+
+    padding: 30px;
+
+}
+
+
+.reaction-icon {
+
+    font-size: 5rem;
+
+    margin-bottom: 10px;
+
+}
+
+
+.reaction-content h2 {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+
+.reaction-content p {
+
+    color: #665a70;
+
+}
+
+
+/* ========================================
+   LAST RESULT
+======================================== */
+
+.last-result {
+
+    min-height: 35px;
+
+    text-align: center;
+
+    font-weight: 800;
+
+    font-size: 1.1rem;
+
+}
+
+
+/* ========================================
+   RESULTS OVERLAY
+======================================== */
+
+.reaction-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(48, 35, 61, 0.75);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+}
+
+
+.reaction-overlay.show {
+
+    display: flex;
+
+}
+
+
+/* ========================================
+   RESULTS MODAL
+======================================== */
+
+.reaction-modal {
+
+    background: #fff5fb;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
+    width: min(470px, 95%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    text-align: center;
+
+    box-shadow: 10px 10px 0 #30233d;
+
+    animation: popIn 0.4s ease;
+
+}
+
+
+.result-emoji {
+
+    font-size: 4rem;
+
+}
+
+
+.reaction-modal h2 {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   RESULTS LIST
+======================================== */
+
+.results-list {
+
+    margin: 20px 0;
+
+}
+
+
+.result-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: white;
+
+    border: 2px solid #30233d;
+
+    border-radius: 12px;
+
+    padding: 8px 15px;
+
+    margin: 7px 0;
+
+    font-weight: 700;
+
+}
+
+
+.result-row strong {
+
+    color: #7b61ff;
+
+}
+
+
+/* ========================================
+   FINAL STATS
+======================================== */
+
+.final-reaction-stats {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 60px;
+
+    margin: 25px 0;
+
+}
+
+
+.final-reaction-stats div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.final-reaction-stats span {
+
+    color: #665a70;
+
+    font-size: 0.9rem;
+
+}
+
+
+.final-reaction-stats strong {
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   NEW BEST
+======================================== */
+
+.reaction-new-best {
+
+    color: #ff5ca8 !important;
+
+    font-weight: 900;
+
+    display: none;
+
+}
+
+
+.reaction-new-best.show {
+
+    display: block;
+
+}
+
+
+/* ========================================
+   HOME LINK
+======================================== */
+
+.home-link {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: #30233d;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes popIn {
+
+    from {
+
+        transform: scale(0.7);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .reaction-stats {
+
+        gap: 25px;
+
+    }
+
+
+    .reaction-box {
+
+        height: 330px;
+
+    }
+
+
+    .reaction-icon {
+
+        font-size: 4rem;
+
+    }
+
+
+    .reaction-content h2 {
+
+        font-size: 2.2rem;
+
+    }
+
+
+    .reaction-modal {
+
+        padding: 25px 18px;
+
+    }
+
+
+    .final-reaction-stats {
+
+        gap: 35px;
+
+    }
+
+}

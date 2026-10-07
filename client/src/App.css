@@ -1,0 +1,690 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5fb;
+    color: #30233d;
+}
+
+/* =========================================
+   AUTH PAGE
+========================================= */
+
+.auth-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            #ffd6eb 0 8%,
+            transparent 8.5%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            #dff4ff 0 7%,
+            transparent 7.5%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            #fff0c7 0 8%,
+            transparent 8.5%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            #d8ffd9 0 7%,
+            transparent 7.5%
+        ),
+        #f7d9ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* =========================================
+   DECORATIONS
+========================================= */
+
+.auth-decoration {
+    position: absolute;
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.decoration-one {
+    top: 12%;
+    left: 12%;
+}
+
+.decoration-two {
+    bottom: 12%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+/* =========================================
+   AUTH CARD
+========================================= */
+
+.auth-card {
+    width: min(430px, 100%);
+
+    background: #fff5fb;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow: 10px 10px 0 #30233d;
+
+    position: relative;
+
+    z-index: 2;
+
+    animation: popIn 0.5s ease;
+}
+
+.signup-card {
+    width: min(470px, 100%);
+}
+
+.auth-logo {
+    font-size: 4rem;
+    margin-bottom: 5px;
+}
+
+.auth-card h1 {
+    font-size: 2.7rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.auth-subtitle {
+    color: #665a70;
+    margin: 5px 0 30px;
+}
+
+/* =========================================
+   FORM
+========================================= */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 3px solid #30233d;
+
+    border-radius: 14px;
+
+    background: white;
+
+    color: #30233d;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.2s;
+}
+
+.form-group input:focus {
+    box-shadow: 4px 4px 0 #ff72b6;
+}
+
+/* =========================================
+   PASSWORD
+========================================= */
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 50px;
+}
+
+.show-password {
+    position: absolute;
+
+    right: 10px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.primary-btn {
+    width: 100%;
+
+    padding: 13px 20px;
+
+    border: 3px solid #30233d;
+
+    border-radius: 30px;
+
+    background: #30233d;
+
+    color: white;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    background: #ff72b6;
+
+    color: #30233d;
+
+    transform: translateY(-3px);
+
+    box-shadow: 5px 5px 0 #30233d;
+}
+
+.auth-btn {
+    margin-top: 8px;
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 25px 0;
+
+    color: #665a70;
+
+    font-size: 0.85rem;
+
+    font-weight: 700;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 2px;
+
+    background: #d8ccd9;
+}
+
+/* =========================================
+   SWITCH
+========================================= */
+
+.switch-text {
+    color: #665a70;
+    margin: 0;
+}
+
+.switch-text a {
+    margin-left: 5px;
+
+    color: #ff5ca8;
+
+    font-weight: 900;
+
+    text-decoration: none;
+}
+
+.switch-text a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   WELCOME
+========================================= */
+
+.welcome-page {
+    min-height: 100vh;
+
+    background: #f7d9ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.welcome-card {
+    width: min(500px, 100%);
+
+    background: #fff5fb;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    box-shadow: 10px 10px 0 #30233d;
+}
+
+.welcome-logo {
+    font-size: 5rem;
+}
+
+.welcome-card h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.welcome-card p {
+    color: #665a70;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes popIn {
+
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .auth-card {
+        padding: 30px 22px;
+        box-shadow: 7px 7px 0 #30233d;
+    }
+
+    .auth-card h1 {
+        font-size: 2.2rem;
+    }
+
+    .auth-decoration {
+        font-size: 2.5rem;
+    }
+
+    .welcome-card {
+        padding: 40px 25px;
+    }
+
+}
+/* ================================
+   PLAYROOM HOME
+================================ */
+
+.playroom-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 10% 10%, #ffd6eb 0, transparent 25%),
+        radial-gradient(circle at 90% 20%, #d9f4ff 0, transparent 25%),
+        radial-gradient(circle at 50% 100%, #fff0b8 0, transparent 30%),
+        #fff5fb;
+    color: #30233d;
+}
+
+.playroom-nav {
+    min-height: 75px;
+    padding: 15px 6%;
+    background: #ffd6eb;
+    border-bottom: 3px solid #30233d;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.playroom-logo {
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+}
+
+.logout-btn {
+    padding: 9px 16px;
+    background: white;
+    border: 2px solid #30233d;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 #30233d;
+}
+
+.logout-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 #30233d;
+}
+
+.playroom-main {
+    width: min(1200px, 92%);
+    margin: auto;
+}
+
+.playroom-hero {
+    position: relative;
+    text-align: center;
+    padding: 80px 20px 65px;
+}
+
+.hero-small {
+    font-size: 0.9rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.playroom-hero h1 {
+    margin: 0;
+    font-size: clamp(4rem, 11vw, 8rem);
+    line-height: 0.82;
+    font-weight: 1000;
+    letter-spacing: -7px;
+}
+
+.playroom-hero p:last-child {
+    margin-top: 25px;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.hero-star {
+    position: absolute;
+    top: 35px;
+    right: 12%;
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.games-section {
+    padding: 20px 0 50px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.7rem, 4vw, 2.7rem);
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    font-weight: 600;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.playroom-game-card {
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 22px;
+    padding: 25px 18px;
+    text-align: center;
+    box-shadow: 6px 6px 0 #30233d;
+    transition: 0.2s ease;
+}
+
+.playroom-game-card:hover {
+    transform: translateY(-7px) rotate(-1deg);
+    box-shadow: 10px 10px 0 #30233d;
+}
+
+.game-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.playroom-game-card h3 {
+    font-size: 1.15rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.playroom-game-card p {
+    min-height: 45px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.game-play-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #30233d;
+    color: white;
+    border: 2px solid #30233d;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.game-play-btn:hover {
+    background: #ff75b5;
+    color: #30233d;
+}
+
+.stats-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0 70px;
+}
+
+.stat-card {
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 5px 5px 0 #30233d;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.stat-card span {
+    font-size: 2rem;
+}
+
+.stat-card strong {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.stat-card small {
+    font-weight: 700;
+}
+
+@media (max-width: 900px) {
+
+    .games-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .playroom-nav {
+        flex-direction: column;
+    }
+
+    .playroom-hero {
+        padding-top: 55px;
+    }
+
+    .playroom-hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================================
+   LEADERBOARD
+================================ */
+
+.leaderboard-section {
+    padding: 20px 0 80px;
+}
+
+.leaderboard-card {
+    width: min(800px, 100%);
+    margin: 0 auto;
+    background: white;
+    border: 3px solid #30233d;
+    border-radius: 25px;
+    box-shadow: 7px 7px 0 #30233d;
+    overflow: hidden;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 70px 1fr auto;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 22px;
+    border-bottom: 2px solid #eaddeb;
+}
+
+.leaderboard-row:last-child {
+    border-bottom: none;
+}
+
+.rank {
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.player-info strong {
+    font-size: 1.05rem;
+    font-weight: 900;
+}
+
+.player-info small {
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.player-score {
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+.leaderboard-message {
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    font-weight: 700;
+}
+
+@media (max-width: 600px) {
+
+    .leaderboard-row {
+        grid-template-columns: 50px 1fr auto;
+        padding: 15px;
+    }
+
+    .player-score {
+        font-size: 0.95rem;
+    }
+
+}

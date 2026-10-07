@@ -1,0 +1,358 @@
+/* ========================================
+   TIC TAC TOE
+======================================== */
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.ttt-header {
+
+    padding: 60px 20px;
+
+    background: #dff4ff;
+
+}
+
+
+.ttt-header h1 {
+
+    font-size: clamp(2.5rem, 7vw, 5rem);
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   SCORE
+======================================== */
+
+.ttt-score {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 70px;
+
+    margin: 40px auto 20px;
+
+    text-align: center;
+
+}
+
+
+.ttt-score div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.ttt-score span {
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    color: #665a70;
+
+}
+
+
+.ttt-score strong {
+
+    font-size: 2rem;
+
+    font-weight: 900;
+
+}
+
+
+/* ========================================
+   TURN
+======================================== */
+
+.turn-display {
+
+    text-align: center;
+
+    margin: 20px 0;
+
+}
+
+
+#turn-text {
+
+    display: inline-block;
+
+    background: #ffd6eb;
+
+    border: 2px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 8px 20px;
+
+    font-weight: 700;
+
+}
+
+
+/* ========================================
+   BOARD
+======================================== */
+
+.tic-tac-toe-board {
+
+    width: min(420px, 90vw);
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+/* ========================================
+   CELLS
+======================================== */
+
+.ttt-cell {
+
+    aspect-ratio: 1;
+
+    background: white;
+
+    border: 3px solid #30233d;
+
+    border-radius: 20px;
+
+    font-size: clamp(2.5rem, 10vw, 4rem);
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.ttt-cell:hover {
+
+    background: #fff0f8;
+
+    transform: scale(1.03);
+
+}
+
+
+.ttt-cell.x {
+
+    color: #ff5ca8;
+
+}
+
+
+.ttt-cell.o {
+
+    color: #7b61ff;
+
+}
+
+
+/* Winning cells */
+
+.ttt-cell.winner {
+
+    background: #d8ffd9;
+
+    animation: winnerPulse 0.7s infinite alternate;
+
+}
+
+
+/* ========================================
+   RESULT OVERLAY
+======================================== */
+
+.ttt-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(48, 35, 61, 0.75);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+}
+
+
+.ttt-overlay.show {
+
+    display: flex;
+
+}
+
+
+/* ========================================
+   MODAL
+======================================== */
+
+.ttt-modal {
+
+    background: #fff5fb;
+
+    border: 4px solid #30233d;
+
+    border-radius: 30px;
+
+    padding: 40px;
+
+    width: min(430px, 95%);
+
+    text-align: center;
+
+    box-shadow: 10px 10px 0 #30233d;
+
+    animation: popIn 0.4s ease;
+
+}
+
+
+.result-emoji {
+
+    font-size: 4rem;
+
+}
+
+
+.ttt-modal h2 {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+}
+
+
+.ttt-modal p {
+
+    color: #665a70;
+
+}
+
+
+/* ========================================
+   HOME LINK
+======================================== */
+
+.home-link {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: #30233d;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+}
+
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+
+@keyframes winnerPulse {
+
+    from {
+
+        transform: scale(1);
+
+    }
+
+    to {
+
+        transform: scale(1.06);
+
+    }
+
+}
+
+
+@keyframes popIn {
+
+    from {
+
+        transform: scale(0.7);
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 500px) {
+
+    .ttt-score {
+
+        gap: 35px;
+
+    }
+
+
+    .ttt-score strong {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    .ttt-cell {
+
+        border-radius: 14px;
+
+    }
+
+
+    .ttt-modal {
+
+        padding: 30px 20px;
+
+    }
+
+}
