@@ -278,7 +278,7 @@ async function saveScoreToBackend() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/scores/save",
+            "https://playroom-backend-p97v.onrender.com/api/scores/save",
             {
                 method: "POST",
 

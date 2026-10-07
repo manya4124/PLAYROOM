@@ -53,7 +53,7 @@ function Playroom() {
     async function loadLeaderboard() {
         try {
             const response = await fetch(
-                "http://localhost:5000/api/scores/leaderboard"
+                "https://playroom-backend-p97v.onrender.com/api/scores/leaderboard"
             );
 
             const data = await response.json();

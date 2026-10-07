@@ -65,7 +65,7 @@ function Signup() {
 
             const response =
                 await fetch(
-                    "http://localhost:5000/api/auth/register",
+                    "https://playroom-backend-p97v.onrender.com/api/auth/register",
                     {
                         method: "POST",
 
